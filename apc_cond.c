@@ -5,25 +5,25 @@
 int main(){
 
     int n1, n2, n3, n4, n5;
-    printf("Digite o primeiro numero: ");
+    printf("Type the first number: ");
     scanf("%d", &n1);
     
-    printf("Digite o segundo numero: ");
+    printf("Type the second number: ");
     scanf("%d", &n2);
     
-    printf("Digite o terceiro numero: ");
+    printf("Type the third number: ");
     scanf("%d", &n3);    
     
-    printf("Digite o quarto numero: ");
+    printf("Type the fourth number: ");
     scanf("%d", &n4);
     
-    printf("Digite o quinto numero: ");
+    printf("Type the fifth number: ");
     scanf("%d", &n5);
 
     if(n1 + n2 < n3 && n4 + n5 > n3){
-        printf("Valores aceitos!!\n");
+        printf("Value accepted!!\n");
     }   else
-        printf("Valores nao aceitos!!\n");
+        printf("Value not accepted!!\n");
     
 
     return 0;
