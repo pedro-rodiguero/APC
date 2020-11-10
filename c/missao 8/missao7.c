@@ -2,15 +2,12 @@
 #include <math.h>
 #include <stdlib.h>
 
-int verify (int x[], int maior, int menor);
 void menu();
 
 int main(){
 
-
-
     int i, cont = -1, regras_quebradas = 0, soma = 0;
-    int x[i], maior = -1, menor = 101;
+    int x[100], maior = -1, menor = 101;
     int option;
     float media, result;
 
@@ -20,17 +17,21 @@ int main(){
     for (i = 0; i < cont; i++){
         printf("Digite o numero: ");
         scanf("%d", &x[i]);
-        verify(x[i], maior, menor);
         
         while (x[i] < 0 || x[i] > 100 || x[i] % 3 == 0){
             printf("Numero invalido!! Tente novamente!! \n");
             regras_quebradas = regras_quebradas + 1;
+            printf("Digite outro numero: ");
             scanf("%d", &x[i]);
-            verify (x[i], maior, menor);
+        }   
+        if (x[i] > maior){
+            maior = x[i];
+        } 
+        if (x[i] < menor){
+             menor = x[i];
         }
+        soma = soma + x[i];
     }
-    cont = cont + 1;
-    soma = soma + x[i];
 
     do {
         menu();
@@ -42,16 +43,15 @@ int main(){
 
             case 2:                                        //Media
                 media = soma / cont;
-                printf("Media: %.2f", media);
+                printf("Media: %.2f \n", media);
                 break;
 
             case 3:                                         //Maior
-                verify(x[i], maior, menor);
-                printf("Maior numero digitado: %d", maior);
+                printf("Maior numero digitado: %d \n", maior);
                 break;
             
             case 4:                                         //Menor
-                printf("Menor numero digitado: %d", menor);
+                printf("Menor numero digitado: %d \n", menor);
                 break;
 
             case 5:                                         //Qtde de regras quebradas
@@ -68,18 +68,6 @@ int main(){
     } while (option != 6);
 
     return 0; 
-}
-
-int verify (int x[], int maior, int menor){
-
-    int i;
-    if (x[i] > maior){
-        maior = x[i];
-    } else{
-        x[i] = menor;
-    }
-
-    return 0;
 }
 
 void menu (){
