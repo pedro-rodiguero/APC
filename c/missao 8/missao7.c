@@ -52,7 +52,6 @@ int main(){
             
             case 4:                                         //Menor
                 printf("Menor numero digitado: %d", menor);
-
                 break;
 
             case 5:                                         //Qtde de regras quebradas
