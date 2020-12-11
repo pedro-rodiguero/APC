@@ -24,10 +24,11 @@ int main (){
                 scanf("%d", &chave);
                 printf("Digite a senha: ");
                 scanf(" %[^\n]s", senha);
+                getchar();
 
-                for (int i = 0; i < 20; i++){                 //Criptografando
-                    (string[i] = (string[i] + chave) % 122);
-                    string_criptographed[i] = string[i] + 97;
+                for (int i = 0; i < strlen(string); i++){                 //Criptografando
+                    string[i] = ((string[i] + chave) % 122) + 'a';
+                    string_criptographed[i] = string[i];
                 }
 
                 printf("%s \n", string);
@@ -36,10 +37,11 @@ int main (){
             case 2:
                 printf("Digite a senha: ");
                 scanf(" %[^\n]", senha_da_descriptografia);
+                getchar();
                 if (strstr(senha_da_descriptografia, senha)){
-                    for (int i = 0; i < 20; i++){               //Descriptografando
-                        string[i] = (string[i] - chave) % 122;
-                        string_decriptographed[i] = string[i] - 97;
+                    for (int i = 0; i < strlen(string); i++){               //Descriptografando
+                        string[i] = ((string[i] - chave) % 122) - 'a';
+                        string_decriptographed[i] = string[i];
                     }
                     printf("%s \n", string);
                 } else{
